@@ -10,9 +10,9 @@ test("button has correct inital color", () => {
 
   fireEvent.click(colorButton);
 
-  expect(colorButton).toHaveStyle({ backgroundColor: "blue" });
-  expect(colorButton).toHaveTextContent("Change to red");
-});
+  expect(colorButton).toHaveStyle({backgroundColor: 'blue'});
+  expect(colorButton).toHaveTextContent('Change to red');
+})
 
 test("Checkbox disabled button on first click and enables on second click", () => {
   render(<App />);
