@@ -1,9 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test('button has correct inital color', () => {
-  render(<App />);
 
+test('button has correct inital color', () => {
+  
+  render(<App />);
   const colorButton = screen.getByRole('button', { name: 'Change to blue'});
 
   expect(colorButton).toHaveStyle({ backgroundColor: 'red'})
@@ -11,6 +12,16 @@ test('button has correct inital color', () => {
   fireEvent.click(colorButton);
 
   expect(colorButton).toHaveStyle({backgroundColor: 'blue'});
-
   expect(colorButton.textContent).toBe('Change to red');
+})
+
+test('Checkbox disabled button on first click and enables on second click', () => {
+  render(<App />);
+  const checkbox = screen.getByRole('checkbox');
+  const button = screen.getByRole('button')
+  
+  expect(button).toBeEnabled();
+  fireEvent.click(checkbox);
+
+  expect(button).toBeDisabled();
 })
