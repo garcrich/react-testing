@@ -17,7 +17,7 @@ test('button has correct inital color', () => {
 
 test('Checkbox disabled button on first click and enables on second click', () => {
   render(<App />);
-  const checkbox = screen.getByRole('checkbox');
+  const checkbox = screen.getByRole('checkbox', {name: 'Disable button'});
   const button = screen.getByRole('button')
   
   expect(button).toBeEnabled();
