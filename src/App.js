@@ -1,31 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import "./App.css";
+import { useState } from "react";
 
 export function replaceCamelWithSpaces(colorName) {
-  return colorName.replace(/\B([A-Z])\B/g, ' $1')
+  return colorName.replace(/\B([A-Z])\B/g, " $1");
 }
 
 function App() {
-  const [ buttonColor, setButton] = useState('red');
+  const [buttonColor, setButton] = useState("red");
   const [isDisabled, setDisabled] = useState(false);
-  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+  const newButtonColor = buttonColor === "red" ? "blue" : "red";
 
   return (
     <div>
-      <button 
-        onClick={() => setButton(newButtonColor)} 
-        style={{backgroundColor: isDisabled ? 'gray ' : buttonColor}}
+      <button
+        onClick={() => setButton(newButtonColor)}
+        style={{ backgroundColor: isDisabled ? "gray " : buttonColor }}
         disabled={isDisabled}
       >
-          Change to {replaceCamelWithSpaces(newButtonColor)}
+        Change to {replaceCamelWithSpaces(newButtonColor)}
       </button>
-      <input 
+      <input
         onClick={() => setDisabled(!isDisabled)}
-        type="checkbox" 
+        type="checkbox"
         id="disable-button-checkbox"
       />
-      <label htmlFor='disable-button-checkbox'>Disable button</label>
+      <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
 }
