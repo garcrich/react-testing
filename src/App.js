@@ -18,7 +18,7 @@ function App() {
         style={{backgroundColor: isDisabled ? 'gray ' : buttonColor}}
         disabled={isDisabled}
       >
-          Change to {newButtonColor}
+          Change to {replaceCamelWithSpaces(newButtonColor)}
       </button>
       <input 
         onClick={() => setDisabled(!isDisabled)}
